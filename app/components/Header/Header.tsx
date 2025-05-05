@@ -9,7 +9,7 @@ function Header() {
   return (
     <div className="flex items-center gap-6 col-span-full">
       <a href="/" className="decoration no-underline">
-        <h1 className="flex items-center pl-7 gap-6 text-1xl sm:text-2xl text-text-primary font-bold">
+        <h1 className="flex items-center pl-7 gap-6 text-xl sm:text-2xl text-text-primary font-bold">
           <BsFillGrid1X2Fill color="#faa31a" />
           Flexbox Creator
         </h1>
