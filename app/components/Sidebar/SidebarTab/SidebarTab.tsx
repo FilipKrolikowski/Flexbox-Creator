@@ -2,12 +2,11 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { FaRegQuestionCircle } from "react-icons/fa";
 import { FaCode, FaGithub } from "react-icons/fa6";
 import { LuPanelRightOpen } from "react-icons/lu";
 import DisplayCode from "../../UI/DisplayCode/DisplayCode";
 import Modal, { Content, OpenBtn } from "../../UI/Modal/Modal";
-// import Tooltip from "../../UI/Tooltip/Tooltip";
+import Tooltip from "../../UI/Tooltip/Tooltip";
 import styles from "./SidebarTab.module.scss";
 import { State } from "../../../types";
 
@@ -52,7 +51,7 @@ function SidebarTab({ tabs, switchState, onSwitch, panelState, togglePanel, stat
       {tabs.map((tab, index) => (
         <button key={index} className={styles.btn__switch} data-switch={index} onClick={() => onSwitch(index)}>
           {tab.icon}
-
+          <Tooltip position="right">{tab.name}</Tooltip>
           {switchState === index && panelState === true && (
             <motion.span className={styles.active} transition={{ duration: 0.2 }} layoutId="activeTab"></motion.span>
           )}
@@ -64,6 +63,7 @@ function SidebarTab({ tabs, switchState, onSwitch, panelState, togglePanel, stat
         <OpenBtn>
           <button className={styles.btn}>
             <FaCode />
+            <Tooltip position="right">Code</Tooltip>
           </button>
         </OpenBtn>
         <Content>
@@ -74,6 +74,7 @@ function SidebarTab({ tabs, switchState, onSwitch, panelState, togglePanel, stat
 
       <a href="https://github.com/FilipKrolikowski" target="_blank" className={`${styles.btn} ${styles.btn__github}`}>
         <FaGithub />
+        <Tooltip position="right">GitHub</Tooltip>
       </a>
     </motion.div>
   );
