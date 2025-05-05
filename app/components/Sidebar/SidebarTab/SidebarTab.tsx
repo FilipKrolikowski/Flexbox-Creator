@@ -5,10 +5,9 @@ import { useEffect, useRef } from "react";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { FaCode, FaGithub } from "react-icons/fa6";
 import { LuPanelRightOpen } from "react-icons/lu";
-// import DisplayCode from "../../UI/DisplayCode/DisplayCode";
-// import Modal, { Content, OpenBtn } from "../../UI/Modal/Modal";
+import DisplayCode from "../../UI/DisplayCode/DisplayCode";
+import Modal, { Content, OpenBtn } from "../../UI/Modal/Modal";
 // import Tooltip from "../../UI/Tooltip/Tooltip";
-// import About from "../About/About";
 import styles from "./SidebarTab.module.scss";
 import { State } from "../../../types";
 
@@ -61,7 +60,16 @@ function SidebarTab({ tabs, switchState, onSwitch, panelState, togglePanel, stat
       ))}
 
       <hr className={styles.hr} />
-
+      <Modal>
+        <OpenBtn>
+          <button className={styles.btn}>
+            <FaCode />
+          </button>
+        </OpenBtn>
+        <Content>
+          <DisplayCode state={state} />
+        </Content>
+      </Modal>
       <hr className={styles.hr} />
 
       <a href="https://github.com/FilipKrolikowski" target="_blank" className={`${styles.btn} ${styles.btn__github}`}>

@@ -117,3 +117,24 @@ body {
     padding: 0;
   }
 }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: none;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 2rem;
+  margin: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background-color: #2b323c;
+}
