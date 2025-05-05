@@ -25,8 +25,10 @@ import {
 } from "../../lib/features/flexbox/flexboxSlice";
 import { FlexboxContainer, Flexbox } from "../../lib/types/flexbox";
 import { useDispatch, useSelector } from "react-redux";
+import useSettings from "./useSettings";
 
 export const useFlexbox = () => {
+  const { selectMultiple } = useSettings();
   const dispatch = useDispatch();
   const items = useSelector(selectItems);
   const container = useSelector(selectContainer);
@@ -82,6 +84,13 @@ export const useFlexbox = () => {
     dispatch(duplicateItem());
   }, [dispatch]);
 
+  const handleToggleSelected = useCallback(
+    (id: number) => {
+      dispatch(toggleSelected({ id, selectMultiple }));
+    },
+    [dispatch, selectMultiple]
+  );
+
   const handleToggleAllSelected = useCallback(() => {
     dispatch(toggleAllSelected());
   }, [dispatch]);
@@ -117,6 +126,7 @@ export const useFlexbox = () => {
     addItem: handleAddItem,
     removeItem: handleRemoveItem,
     duplicateItem: handleDuplicateItem,
+    toggleSelected: handleToggleSelected,
     toggleAllSelected: handleToggleAllSelected,
     clearSelected: handleClearSelected,
     resetContainer: handleResetContainer,

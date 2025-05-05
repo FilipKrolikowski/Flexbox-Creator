@@ -64,11 +64,7 @@ function SidebarTab({ tabs, switchState, onSwitch, panelState, togglePanel, stat
 
       <hr className={styles.hr} />
 
-      <a
-        href="https://github.com/prazzon/flexbox-labs"
-        target="_blank"
-        className={`${styles.btn} ${styles.btn__github}`}
-      >
+      <a href="https://github.com/FilipKrolikowski" target="_blank" className={`${styles.btn} ${styles.btn__github}`}>
         <FaGithub />
       </a>
     </motion.div>

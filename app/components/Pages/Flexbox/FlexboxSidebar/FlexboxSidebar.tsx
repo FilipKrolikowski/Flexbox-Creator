@@ -11,7 +11,7 @@ import { TbLayoutGrid } from "react-icons/tb";
 import Edit from "../../../Sidebar/Edit/Edit";
 import Layout from "../../../Sidebar/Layout/Layout";
 import Save from "../../../Sidebar/Save/Save";
-// import Settings from "../../../SideBar/Settings/Settings";
+import Settings from "../../../Sidebar/Settings/Settings";
 import SideBar from "../../../Sidebar/SideBar";
 
 export default function FlexboxSidebar() {
@@ -56,7 +56,7 @@ export default function FlexboxSidebar() {
       ),
       icon: <TbLayoutGrid />,
     },
-    //  { name: "Settings", component: <Settings />, icon: <LuSettings2 /> },
+    { name: "Settings", component: <Settings />, icon: <LuSettings2 /> },
   ];
 
   return <SideBar tabs={tabs} state={flexbox} />;

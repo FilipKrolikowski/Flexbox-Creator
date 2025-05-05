@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import type { ReactNode } from "react";
+import { SettingsProvider } from "./context/SettingsContext";
 import StoreProvider from "./StoreProvider";
 import "./styles/globals.scss";
 
@@ -16,7 +17,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <StoreProvider>{children}</StoreProvider>
+        <SettingsProvider>
+          <StoreProvider>{children}</StoreProvider>
+        </SettingsProvider>
       </body>
     </html>
   );

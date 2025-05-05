@@ -17,7 +17,7 @@ function Layout({ layouts, setState, clearSelected }: Props) {
 
   return (
     <div className={styles.container}>
-      <h2 className="title">Layouts</h2>
+      <h2 className="title text-center mb-2 font-bold">Layouts</h2>
       <div className={styles.layout_container}>
         {layouts.map((layout, index) => (
           <div key={index} className={styles.layout} onClick={() => handleClick(layout.layout)}>
