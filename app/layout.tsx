@@ -1,17 +1,23 @@
-import Image from "next/image";
+import { Metadata } from "next";
 import type { ReactNode } from "react";
-// import { StoreProvider } from "./StoreProvider";
-
+import StoreProvider from "./StoreProvider";
 import "./styles/globals.css";
 
-interface Props {
-  readonly children: ReactNode;
+export const metadata: Metadata = {
+  title: "Flexbox Creator",
+  description: "A visual tool for experimenting with flexbox layouts",
+};
+
+interface RootLayoutProps {
+  children: ReactNode;
 }
 
-export default function RootLayout({ children }: Props) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>{/* <StoreProvider>{children}</StoreProvider> */}</body>
+      <body>
+        <StoreProvider>{children}</StoreProvider>
+      </body>
     </html>
   );
 }
