@@ -7,11 +7,15 @@ import Playground from "../../Playground/Playground";
 import { useFlexbox } from "../../../hooks/useFlexbox";
 import FlexboxItem from "./FlexboxItem/FlexboxItem";
 import FlexboxToolbar from "./FlexboxToolbar/FlexboxToolbar";
+import FlexboxSnackbar from "./FlexboxSnackbar/FlexboxSnackbar";
 
 export default function FlexboxPage() {
-  const { items, container, clearSelected } = useFlexbox();
+  const { items, container } = useFlexbox();
 
-  const playgroundTools = [{ component: <FlexboxToolbar />, id: "toolbar" }];
+  const playgroundTools = [
+    { component: <FlexboxToolbar />, id: "toolbar" },
+    { component: <FlexboxSnackbar />, id: "snackbar" },
+  ];
 
   return (
     <MainContent>
