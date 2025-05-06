@@ -10,6 +10,7 @@
 
 .playground {
   display: grid;
+  grid-template-rows: 6.6rem auto;
   grid-column: 2 / -1;
   border-radius: 1.5rem;
   padding-top: 1.5rem;
