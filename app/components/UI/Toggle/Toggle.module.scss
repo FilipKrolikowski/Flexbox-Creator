@@ -33,7 +33,6 @@
     background-color: white;
   }
 
-  /* Switch background change */
   &:checked + .toggle {
     background-color: var(--color-primary);
     transition-duration: 0.2s;

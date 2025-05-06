@@ -132,7 +132,6 @@ const flexboxReducer = enableHistory(flexboxSlice.reducer, "flexbox", ["items", 
 
 export const { undo: undoFlexbox, redo: redoFlexbox } = createHistoryActions("flexbox");
 
-// Selector functions
 export const selectItems = (state: RootState) => state.flexbox.present.items;
 export const selectContainer = (state: RootState) => state.flexbox.present.container;
 export const selectSelectedItems = (state: RootState) => state.flexbox.present.selectedItems;

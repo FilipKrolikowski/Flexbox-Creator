@@ -7,9 +7,9 @@ import { BsFillGrid1X2Fill } from "react-icons/bs";
 
 function Header() {
   return (
-    <div className="flex items-center gap-6 col-span-full">
-      <a href="/" className="decoration no-underline">
-        <h1 className="flex items-center pl-7 gap-6 text-xl sm:text-2xl text-text-primary font-bold">
+    <div className={styles.header}>
+      <a href="/" className={styles.link}>
+        <h1 className={styles.logo}>
           <BsFillGrid1X2Fill color="#faa31a" />
           Flexbox Creator
         </h1>
@@ -17,7 +17,7 @@ function Header() {
 
       <a href="https://github.com/FilipKrolikowski/flexbox" className={styles.star_btn} target="_blank">
         <div className={styles.icon_text}>
-          <FaGithub />
+          <FaGithub color="#faa31a" />
           <ShinyText text="Check on GitHub" className={styles.label} />
         </div>
       </a>

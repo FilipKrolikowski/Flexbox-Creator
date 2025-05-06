@@ -37,10 +37,6 @@
   }
 }
 
-/** ################ **/
-/** Radio Tile **/
-/** ################ **/
-
 .tile__container {
   display: flex;
   justify-content: space-around;
@@ -101,6 +97,9 @@
       border: 1px solid var(--icon-border);
       color: var(--text-secondary);
       transition: transform 0.2s ease-in-out;
+      &:hover {
+        background-color: var(--bg-content-hover-secondary);
+      }
     }
 
     &_title {
@@ -112,10 +111,6 @@
     }
   }
 }
-
-/** ################ **/
-/** Radio Slider **/
-/** ################ **/
 
 .color__container {
   display: flex;
@@ -132,12 +127,10 @@
   width: 2rem;
   height: 2rem;
 
-  /* Hide the browser's default radio button */
   input {
     display: none;
   }
 
-  /* Create a custom radio button */
   span {
     position: absolute;
     top: 0;
@@ -146,7 +139,6 @@
     height: 100%;
     border-radius: 50%;
 
-    /* Create and style the indicator (the dot/circle - hidden when not checked) */
     &:after {
       content: "";
       display: block;
@@ -167,14 +159,12 @@
     box-shadow: 0 0 1.5px 1.5px var(--text-secondary);
   }
 
-  /* Show the indicator (dot/circle) when checked */
   input:checked ~ span:after {
     transform: scale(1);
   }
 
-  /* Style background colors */
-  &__purple {
-    background-color: #9e71ff;
+  &__orange {
+    background-color: #faa31a;
   }
 
   &__green {
@@ -194,16 +184,11 @@
   }
 }
 
-/** ################ **/
-/** Range Slider **/
-/** ################ **/
-
 .range {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 
-  /* From Uiverse.io by satisshTechie */
   &__slider {
     appearance: none;
     -webkit-appearance: none;

@@ -7,8 +7,6 @@ type ConfigBase = TypeConfig &
     description: string;
     icon: IconType;
     defaultValue: string;
-    // itemType?: "default" | "dropdown";
-    // itemType?: ItemType;
   };
 
 type ItemType = DropDownConfig | { itemType?: "default"; defaultValue: string };

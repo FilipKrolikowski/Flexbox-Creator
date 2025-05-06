@@ -18,7 +18,7 @@ $font-primary: "Quicksand", sans-serif;
   --color-disabled: #8f8f8f;
 }
 html {
-  --color-primary: #9e71ff;
+  --color-primary: #faa31a;
 
   --bg-primary: #050505;
   --bg-secondary: #131417;
@@ -26,6 +26,7 @@ html {
   --bg-content: #24292d;
   --bg-content-active: #24292d;
   --bg-content-hover: #2c3236;
+  --bg-content-hover-secondary: #4d5153;
   --bg-content-border: #050505;
   --bg-content-dot: #2a2c30;
   --bg-container: #1c1e21;
@@ -49,6 +50,7 @@ html[data-theme="dark"] {
   --bg-content: #24292d;
   --bg-content-active: #24292d;
   --bg-content-hover: #2c3236;
+  --bg-content-hover-secondary: #4d5153;
   --bg-content-border: #050505;
   --bg-content-dot: #2a2c30;
   --bg-container: #1c1e21;
@@ -72,7 +74,8 @@ html[data-theme="light"] {
   --bg-content: #f3f5fa;
   --bg-content-active: #1c1e21;
   --bg-content-hover: #e3e7f0;
-  --bg-content-border: #494d55;
+  --bg-content-hover-secondary: #d4dfec;
+  --bg-content-border: #adb0b8;
   --bg-content-dot: #aaa;
   --bg-container: #f3f5fa;
   --bg-divider: #c2c9d6;
@@ -88,6 +91,46 @@ html[data-theme="light"] {
   --text-secondary: #5e636e;
   --text-tertiary: #e3e3e3;
   --text-button: #e3e3e3;
+}
+
+html[data-accent="orange"] {
+  --color-primary: #db8801;
+}
+
+html[data-accent="orange"][data-theme="dark"] {
+  --color-primary: #faa31a;
+}
+
+html[data-accent="green"] {
+  --color-primary: #008736;
+}
+
+html[data-accent="green"][data-theme="dark"] {
+  --color-primary: #45d09e;
+}
+
+html[data-accent="blue"] {
+  --color-primary: #1771f1;
+}
+
+html[data-accent="blue"][data-theme="dark"] {
+  --color-primary: #5199ff;
+}
+
+html[data-accent="red"] {
+  --color-primary: #ec1809;
+}
+
+html[data-accent="red"][data-theme="dark"] {
+  --color-primary: #eb2c2c;
+}
+
+html[data-accent="turquoise"] {
+  --color-primary: #337976;
+}
+
+html[data-accent="turquoise"][data-theme="dark"] {
+  --color-primary: #2a9d8f;
 }
 
 html {
@@ -137,4 +180,24 @@ body {
 ::-webkit-scrollbar-thumb {
   border-radius: 2rem;
   background-color: #2b323c;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.title {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 700;
 }

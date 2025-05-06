@@ -15,8 +15,6 @@ function Settings() {
     changeTheme,
     accent,
     changeAccent,
-    textSize,
-    changeTextSize,
     reset,
     reduceMotion,
     changeReduceMotion,
@@ -102,10 +100,10 @@ function Settings() {
                 <input
                   type="radio"
                   name="accent"
-                  checked={accent === "purple"}
-                  onChange={() => changeAccent("purple")}
+                  checked={accent === "orange"}
+                  onChange={() => changeAccent("orange")}
                 />
-                <span className={styles.color__purple}></span>
+                <span className={styles.color__orange}></span>
               </label>
               <label className={styles.color}>
                 <input type="radio" name="accent" checked={accent === "green"} onChange={() => changeAccent("green")} />
@@ -116,12 +114,7 @@ function Settings() {
                 <span className={styles.color__blue}></span>
               </label>
               <label className={styles.color}>
-                <input
-                  type="radio"
-                  name="accent"
-                  checked={accent === "orange"}
-                  onChange={() => changeAccent("orange")}
-                />
+                <input type="radio" name="accent" checked={accent === "red"} onChange={() => changeAccent("red")} />
                 <span className={styles.color__yellow}></span>
               </label>
               <label className={styles.color}>
@@ -133,33 +126,6 @@ function Settings() {
                 />
                 <span className={styles.color__turquoise}></span>
               </label>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.item}>
-          <div className={styles.title}>
-            <div className={styles.icon}>
-              <TbTextSize />
-            </div>
-            <h4 className={styles.text}>Text Size</h4>
-
-            <div className={styles.range}>
-              <span className={styles.range__icon}>
-                <ImTextColor />
-              </span>
-              <input
-                type="range"
-                min="10"
-                max="32"
-                value={textSize}
-                onChange={(e) => changeTextSize(Number(e.target.value))}
-                className={styles.range__slider}
-                id="myRange"
-              />
-              <span className={styles.range__icon}>
-                <ImTextColor />
-              </span>
             </div>
           </div>
         </div>
@@ -184,9 +150,11 @@ function Settings() {
           </div>
         </div>
       </div>
-      <button className={styles.btn} onClick={reset}>
-        Reset to Defaults
-      </button>
+      <div className="flex justify-center">
+        <button className={styles.btn} onClick={reset}>
+          Reset to Defaults
+        </button>
+      </div>
     </div>
   );
 }

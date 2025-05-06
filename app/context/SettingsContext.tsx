@@ -8,9 +8,7 @@ interface Context {
   theme: string;
   changeTheme: (theme: "light" | "dark" | "auto") => void;
   accent: string;
-  changeAccent: (accent: "purple" | "green" | "blue" | "orange" | "turquoise") => void;
-  textSize: number;
-  changeTextSize: (size: number) => void;
+  changeAccent: (accent: "orange" | "green" | "blue" | "red" | "turquoise") => void;
   reset: () => void;
   reduceMotion: boolean | null;
   changeReduceMotion: (value: boolean) => void;
@@ -26,7 +24,7 @@ export const SettingsContext = createContext<Context | null>(null);
 
 const defaultSettings = {
   theme: "dark",
-  accent: "purple",
+  accent: "orange",
   textSize: 16,
   selectMultiple: true,
 };
@@ -39,18 +37,14 @@ export const SettingsProvider = ({ children }: Props) => {
     reduceMotion: prefersReducedMotion,
   });
 
-  const { theme, accent, textSize, reduceMotion, selectMultiple } = settings;
+  const { theme, accent, reduceMotion, selectMultiple } = settings;
 
   const changeTheme = (theme: "light" | "dark" | "auto") => {
     saveSettings({ ...settings, theme: theme });
   };
 
-  const changeAccent = (accent: "purple" | "green" | "blue" | "orange" | "turquoise") => {
+  const changeAccent = (accent: "orange" | "green" | "blue" | "red" | "turquoise") => {
     saveSettings({ ...settings, accent: accent });
-  };
-
-  const changeTextSize = (size: number) => {
-    saveSettings({ ...settings, textSize: size });
   };
 
   const reset = () => {
@@ -92,8 +86,6 @@ export const SettingsProvider = ({ children }: Props) => {
         changeTheme,
         accent,
         changeAccent,
-        textSize,
-        changeTextSize,
         reset,
         reduceMotion,
         changeReduceMotion,
