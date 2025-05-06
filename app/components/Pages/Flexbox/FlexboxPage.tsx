@@ -8,6 +8,7 @@ import { useFlexbox } from "../../../hooks/useFlexbox";
 import FlexboxItem from "./FlexboxItem/FlexboxItem";
 import FlexboxToolbar from "./FlexboxToolbar/FlexboxToolbar";
 import FlexboxSnackbar from "./FlexboxSnackbar/FlexboxSnackbar";
+import MainAxisPointer from "./MainAxisPointer/MainAxisPointer";
 
 export default function FlexboxPage() {
   const { items, container } = useFlexbox();
@@ -15,6 +16,7 @@ export default function FlexboxPage() {
   const playgroundTools = [
     { component: <FlexboxToolbar />, id: "toolbar" },
     { component: <FlexboxSnackbar />, id: "snackbar" },
+    { component: <MainAxisPointer />, id: "main-axis-pointer" },
   ];
 
   return (

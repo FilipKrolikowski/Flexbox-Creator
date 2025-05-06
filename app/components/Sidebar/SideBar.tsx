@@ -5,6 +5,7 @@ import { useState } from "react";
 import { State } from "../../types";
 import SidebarContent from "./SidebarContent/SidebarContent";
 import Tabs from "./SidebarTab/SidebarTab";
+import styles from "./SideBar.module.scss";
 
 interface Tabs {
   name: string;
@@ -34,7 +35,7 @@ function SideBar({ tabs, state }: Props) {
   }
 
   return (
-    <motion.div className="flex gap-2" layoutScroll>
+    <motion.div className={styles.sidebar} layoutScroll>
       <Tabs
         tabs={tabs}
         switchState={switchState}
