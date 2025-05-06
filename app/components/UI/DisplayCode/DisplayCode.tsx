@@ -1,6 +1,6 @@
 "use client";
 
-import { formatHTML, formatCSS } from "../../../utils/formatters";
+import { formatHTML, formatCSS, formatTailwind } from "../../../utils/formatters";
 import { generateFullHTML } from "../../../utils/generateFullHtml";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -12,12 +12,12 @@ import styles from "./DisplayCode.module.scss";
 import ExportButton from "./ExportButton/ExportButton";
 import { State } from "../../../types";
 
-const tabs = [{ title: "HTML" }, { title: "CSS" }];
+const tabs = [{ title: "HTML" }, { title: "CSS" }, { title: "Tailwind" }];
 
 function DisplayCode({ state }: { state: State }) {
   const [switchState, setSwitchState] = useState(0);
 
-  const code = switchState === 0 ? formatHTML(state) : formatCSS(state);
+  const code = switchState === 0 ? formatHTML(state) : switchState === 1 ? formatCSS(state) : formatTailwind(state);
 
   return (
     <div className={styles.container}>

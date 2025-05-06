@@ -2,6 +2,7 @@
 
 import { State, ItemStyle } from "../types";
 import { camelToDash } from "../helpers/helpers";
+import { convertCssToTailwind } from "./cssTailwindConverter";
 
 const defaultItemStyles: ItemStyle = {
   order: 0,
@@ -66,4 +67,21 @@ ${styleRules}
   return `.container {
 ${containerCSS}
 }${itemsCSS ? "\n\n" + itemsCSS : ""}`;
+};
+
+export const formatTailwind = (data: State): string => {
+  const containerClasses = convertCssToTailwind(data.container);
+  const containerTag = containerClasses ? `<div class="${containerClasses}">` : "<div>";
+
+  const items = data.items
+    .map((item) => {
+      const filteredStyles = filterDefaultStyles(item.styles);
+      const itemClasses = convertCssToTailwind(filteredStyles);
+      return itemClasses ? `<div class="${itemClasses}">${item.text}</div>` : `<div>${item.text}</div>`;
+    })
+    .join("\n  ");
+
+  return `${containerTag}
+ ${items}
+</div>`;
 };
