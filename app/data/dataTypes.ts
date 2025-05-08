@@ -1,5 +1,6 @@
 import { IconType } from "react-icons";
 import { FlexboxContainer, FlexboxItem, FlexboxItemStyle } from "../../lib/types/flexbox";
+import { GridContainer, GridItem, GridItemStyle } from "../../lib/types/grid";
 
 type ConfigBase = TypeConfig &
   ItemType & {
@@ -40,17 +41,17 @@ type InputConfig = InputType & {
 type InputType = { inputType: "unit"; unitOptions: string[] } | { inputType: "number"; step?: number };
 
 export type ContainerConfig = ConfigBase & {
-  key: keyof FlexboxContainer;
+  key: keyof FlexboxContainer | keyof GridContainer;
 };
 
 export type ItemConfig = ConfigBase & {
-  key: keyof FlexboxItemStyle;
+  key: keyof FlexboxItemStyle | keyof GridItemStyle;
 };
 export interface Layout {
   name: string;
   img: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   layout: {
-    items: FlexboxItem[];
-    container: FlexboxContainer;
+    items: FlexboxItem[] | GridItem[];
+    container: FlexboxContainer | GridContainer;
   };
 }

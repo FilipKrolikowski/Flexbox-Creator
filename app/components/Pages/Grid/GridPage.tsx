@@ -2,12 +2,13 @@
 
 import LayoutGroupWrapper from "../../UI/LayoutGroup";
 import MainContent from "../../UI/MainContent/MainContent";
+import GridSidebar from "./GridSideBar/GridSideBar";
 
 function GridPage() {
   return (
     <MainContent>
       <LayoutGroupWrapper>
-        <div>grid</div>
+        <GridSidebar />
       </LayoutGroupWrapper>
     </MainContent>
   );
