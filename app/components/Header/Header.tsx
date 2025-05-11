@@ -24,7 +24,7 @@ function Header() {
       {pathname !== "/grid" && (
         <Link href="/grid" className={styles.grid_link}>
           <HiOutlineExternalLink />
-          Grid
+          Grid (Work in progress)
         </Link>
       )}
 
